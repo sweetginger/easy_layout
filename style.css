@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+
+*{
+    margin:0;
+    padding:0;
+    font-size:20px;
+}
+
+ul,li{
+    list-style: none;
+}
+
+/*탑버튼*/
+.btn-top{
+    position: fixed;
+    bottom:200px;
+    right:80px;
+    width:50px;
+    height:50px;
+    background-color:pink;
+}
+
+
+/*header*/
+header{
+    background-color:lightblue;
+    height:100px;
+}
+
+.gnb{
+    float:right;
+    padding:10px 0;
+    height:100px;
+    box-sizing: border-box;
+}
+
+.gnb li{
+    float:left;
+    margin-right:30px;
+    height:80px;
+    line-height:80px;
+    background-color:antiquewhite;
+}
+
+.gnb:after{
+    content:'';
+    display:block;
+    clear:both;
+    /*
+    가상요소 :before, :after 를 사용한 float 초기화
+    요소에 clearfix 라는 클래스를 추가하여 사용하기도 함
+    */
+}
+
+
+/* contents */
+section#contents{
+    display:flex;
+    height:1000px;
+}
+
+section#contents section{
+    flex:1 1 0;
+    /*
+    가장 기본 , flex-grow 증가너비 / flex-shrink 감소너비  / flex-basis 기본너비
+    flex-basis 의 기본값은 auto 이지만 단축속성에서 사용할 경우 0 적용
+    flex:1; = flex:1 1; = flex:1 1 0;
+    가변너비가 아니거나 값이 0일 경우 효과가 없음! 
+    */
+    height:100%;
+} 
+
+/* contents - nav */
+section#contents nav{
+    flex:none;
+    width:200px;
+}
+
+#nav{
+    height:100%;
+    background-color:tomato;
+}
+
+.list{
+    margin:30px 0;
+    border:1px solid #ddd;
+    border-width:1px 0;
+}
+
+.list-item{
+    height:50px;
+    line-height:50px;
+    background-color:salmon;
+}
+
+.list-item:nth-child(2n){
+    background-color:darkorchid;
+}
+
+.list-item:last-child{
+    margin-bottom:0;
+}
+
+.list-item:before{
+    content:'가상요소';
+    display:inline-block;
+    font-size:10px;
+}
+
+.list-item span{
+    color:white;
+}
+
+.list-item span[class=iamspan]{
+    color:blue;
+    font-weight:600;
+}
+
+/* contents - section */
+div.section{
+    width:100%;
+    height:100%;
+}
+
+#section1{
+    background-color:tan;
+}
+
+#section1 table{
+    width:100%;
+    text-align: center;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#section1 table th{
+    font-size:16px;
+}
+#section1 table td{
+    font-size:14px;
+    font-weight: 500;
+}
+
+#section1 table tr{
+    background-color:seagreen;
+
+}
+
+#section1 table td:not(:last-child){
+    background-color:skyblue;
+}
+
+
+#section2{
+    background-color:khaki;
+}
+
+
+#section2{
+    background:khaki url(dog.jpg) no-repeat center;
+    background-size:cover;
+    width:100%;
+
+}
+#section2 .bg{
+    
+}
+
+
+/* footer */
+footer{
+    width:100%;
+    display:table;
+}
+
+#footer{ /* 텍스트를 가운데 위치하도록 하기 */
+    background-color:lemonchiffon;
+    height:150px;
+    text-align: center;
+    line-height:150px;
+}
